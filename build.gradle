@@ -19,14 +19,10 @@ allprojects {
 }
 
 dependencies {
-    //compile 'org.codehaus.groovy:groovy-all:2.3.11'
-    //testCompile group: 'junit', name: 'junit', version: '4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0' //no version before
-    implementation 'com.github.filippruskih:CT417SoftwareEngineering:LatestTag'
     implementation 'com.google.guava:guava:30.1.1-jre'
-    //implementation 'com.github.filippruskih:CT417SoftwareEngineering:master-SNAPSHOT'
-    //implementation 'org.terasoluna.gfw:terasoluna-gfw-jodatime:5.7.0.RELEASE'
+    implementation 'com.github.filippruskih:CT417SoftwareEngineering:AssignmentTag'
 }
 
 test {
