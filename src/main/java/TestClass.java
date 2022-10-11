@@ -1,9 +1,7 @@
-import com.assignment1package;
-import org.joda.time.DateTime;
-import java.util.ArrayList;
-import java.util.List;
-import org.joda.time.DateTime;
-import org.checkerframework.checker.units.qual.A;
+import assignment1package.CourseProgramme;
+import assignment1package.Lecturer;
+import assignment1package.Student;
+import assignment1package.Module;
 import org.joda.time.DateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +27,8 @@ public class TestClass
         CourseProgramme c3 = new CourseProgramme("SCI", new ArrayList<>(), new ArrayList<>(), DateTime.parse("2022-09-05"), DateTime.parse("2023-09-04"));
         ArrayList<CourseProgramme> courseProgrammes = new ArrayList<CourseProgramme>(List.of(c1, c2, c3));
 
-        Lecturer l1 = new Lecturer("John Burns", 55, DateTime.parse("1969-07-07"), 1234, "Jburns1");
-        Lecturer l2 = new Lecturer("Frank Glavin", 35, DateTime.parse("1983-07-07"), 4321, "Fglavin1");
+        Lecturer l1 = new Lecturer("John", "Burns", 55, DateTime.parse("1969-07-07"), 1234);
+        Lecturer l2 = new Lecturer("Frank", "Glavin", 35, DateTime.parse("1983-07-07"), 4321);
         ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>(List.of(l1, l2));
 
         //Adding courses to students
