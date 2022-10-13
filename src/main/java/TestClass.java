@@ -51,7 +51,6 @@ public class TestClass
         //adding the lecturers to their ArrayList
         ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>(List.of(l1, l2, l3, l4, l5, l6, l7));
 
-
         m1.setResponsible(l2);
         m2.setResponsible(l1);
         m3.setResponsible(l4);
@@ -60,13 +59,13 @@ public class TestClass
         m6.setResponsible(l5);
         m7.setResponsible(l7);
 
-        l1.setModulesTeaching(new ArrayList<Module>(List.of(m1)));
+        /*l1.setModulesTeaching(new ArrayList<Module>(List.of(m1)));
         l2.setModulesTeaching(m1);
         l3.setModulesTeaching(m5);
         l4.setModulesTeaching(m3);
         l5.setModulesTeaching(m6);
         l6.setModulesTeaching(m4);
-        l7.setModulesTeaching(m7);
+        l7.setModulesTeaching(m7);*/
 
 
         //Adding courses to students
@@ -154,7 +153,7 @@ public class TestClass
                 System.out.println(" " + s.getName()+" "+s.getSurname());
             }
             System.out.println("Lecturers teaching this module: ");
-            for (Lecturer l : m.getResponsible())
+            /*for (Lecturer l : m.getResponsible())
             {
                 System.out.println(" " + l.getLecturerName()+" "+l.getLecturerSurname());
             }
