@@ -3,6 +3,8 @@ import assignment1package.Lecturer;
 import assignment1package.Student;
 import assignment1package.Module;
 import org.joda.time.DateTime;
+
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class TestClass
 
         // *********** NOTHING MENTIONED ABOUT TESTING THIS COME BACK TO IT AT THE END *************
         //creating lecturers that will be in charge of the modules
-        Lecturer l1 = new Lecturer("John", "Burns", 55, DateTime.parse("1969-07-07"), 1234);
+        /*Lecturer l1 = new Lecturer("John", "Burns", 55, DateTime.parse("1969-07-07"), 1234);
         Lecturer l2 = new Lecturer("Frank", "Glavin", 35, DateTime.parse("1983-07-09"), 4321);
         Lecturer l3 = new Lecturer("Michael", "Schukat", 45, DateTime.parse("1977-08-27"), 1234);
         Lecturer l4 = new Lecturer("Attracta", "Brennan", 52, DateTime.parse("1970-04-17"), 1234);
@@ -49,24 +51,7 @@ public class TestClass
         Lecturer l7 = new Lecturer("Adrian", "Clear", 43, DateTime.parse("1979-03-04"), 1234);
 
         //adding the lecturers to their ArrayList
-        ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>(List.of(l1, l2, l3, l4, l5, l6, l7));
-
-        m1.setResponsible(l2);
-        m2.setResponsible(l1);
-        m3.setResponsible(l4);
-        m4.setResponsible(l6);
-        m5.setResponsible(l3);
-        m6.setResponsible(l5);
-        m7.setResponsible(l7);
-
-        /*l1.setModulesTeaching(new ArrayList<Module>(List.of(m1)));
-        l2.setModulesTeaching(m1);
-        l3.setModulesTeaching(m5);
-        l4.setModulesTeaching(m3);
-        l5.setModulesTeaching(m6);
-        l6.setModulesTeaching(m4);
-        l7.setModulesTeaching(m7);*/
-
+        ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>(List.of(l1, l2, l3, l4, l5, l6, l7));*/
 
         //Adding courses to students
         s1.setCourse(new ArrayList<CourseProgramme>(List.of(c1)));
@@ -120,49 +105,34 @@ public class TestClass
             System.out.println("DOB: " + s.getDob().toString("yyyy-MM-dd"));
             System.out.println("ID: " + s.getId());
             System.out.println("Username: " + s.getUsername());
-            System.out.println("Courses: ");
+            System.out.println("Course student is in: ");
             for (CourseProgramme c : s.getCourse())
             {
-                System.out.println(" " + c.getCourseName());
+                System.out.println("\t" + c.getCourseName());
             }
-            System.out.println("Modules: ");
+            System.out.println("Modules taking: ");
             for (Module m : s.getModules())
             {
-                System.out.println(" " + m.getModuleName());
+                System.out.println("\t"+ m.getModuleID() +" - " + m.getModuleName());
             }
-            /*System.out.println("Lecturers: ");
-            for(Lecturer l: s.getLecturer())
-            {
-                System.out.println(" "+l.getLecturerName());
-            }*/
-            System.out.println("\n");
+            System.out.println("  ");
         }
 
         System.out.println("\nModule Data");
         for (Module m : modules)
         {
-            System.out.println("Module Name: " + m.getModuleName());
+            System.out.println("Module: "+ m.getModuleID()+ " - " + m.getModuleName());
             System.out.println("Module is in ");
             for (CourseProgramme c : m.getCourseProgramme())
             {
-                System.out.println(" " + c.getCourseName());
+                System.out.println("\t" + c.getCourseName());
             }
             System.out.println("Students that are taking this module: ");
             for (Student s : m.getStudent())
             {
-                System.out.println(" " + s.getName()+" "+s.getSurname());
+                System.out.println("\t" + s.getName()+" "+s.getSurname());
             }
-            System.out.println("Lecturers teaching this module: ");
-            /*for (Lecturer l : m.getResponsible())
-            {
-                System.out.println(" " + l.getLecturerName()+" "+l.getLecturerSurname());
-            }
-            /*System.out.println("Lecturers: ");
-            for(Lecturer l: s.getLecturer())
-            {
-                System.out.println(" "+l.getLecturerName());
-            }*/
-            System.out.println("\n");
+            System.out.println(" ");
         }
 
         System.out.println("\nCourse Data");
@@ -172,19 +142,17 @@ public class TestClass
             System.out.println("Modules in "+ c.getCourseName());
             for (Module m : c.getModule())
             {
-                System.out.println(" " + m.getModuleName());
+                System.out.println("\t"+ m.getModuleID() +" - "+ m.getModuleName());
+                //System.out.println("\tModule name: " + m.getModuleID());
             }
             System.out.println("Students in "+ c.getCourseName());
-            for (Student s : students)
+            for (Student s : c.getStudent())
             {
-                System.out.println(" " + s.getName()+" "+s.getSurname());
+                System.out.println("\t" + s.getName()+" "+s.getSurname()+ " ("+ s.getUsername()+")");
             }
-            /*System.out.println("Lecturers: ");
-            for(Lecturer l: s.getLecturer())
-            {
-                System.out.println(" "+l.getLecturerName());
-            }*/
-            System.out.println("\n");
+            System.out.println("Academic start date: " + c.getStartDate().toString("yyyy-MM-dd"));
+            System.out.println("Academic end date: " + c.getEndDate().toString("yyyy-MM-dd"));
+            System.out.println(" ");
         }
     }
 }
