@@ -1,10 +1,7 @@
 import assignment1package.CourseProgramme;
-import assignment1package.Lecturer;
 import assignment1package.Student;
 import assignment1package.Module;
 import org.joda.time.DateTime;
-
-import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,19 +36,6 @@ public class TestClass
         CourseProgramme c3 = new CourseProgramme("ART", new ArrayList<>(), new ArrayList<>(), DateTime.parse("2022-09-05"), DateTime.parse("2023-09-04"));
         //adding the courses to their list
         ArrayList<CourseProgramme> courseProgrammes = new ArrayList<CourseProgramme>(List.of(c1, c2, c3));
-
-        // *********** NOTHING MENTIONED ABOUT TESTING THIS COME BACK TO IT AT THE END *************
-        //creating lecturers that will be in charge of the modules
-        /*Lecturer l1 = new Lecturer("John", "Burns", 55, DateTime.parse("1969-07-07"), 1234);
-        Lecturer l2 = new Lecturer("Frank", "Glavin", 35, DateTime.parse("1983-07-09"), 4321);
-        Lecturer l3 = new Lecturer("Michael", "Schukat", 45, DateTime.parse("1977-08-27"), 1234);
-        Lecturer l4 = new Lecturer("Attracta", "Brennan", 52, DateTime.parse("1970-04-17"), 1234);
-        Lecturer l5 = new Lecturer("Josephine", "Griffith", 51, DateTime.parse("1971-03-21"), 1234);
-        Lecturer l6 = new Lecturer("Jim", "Duggan", 40, DateTime.parse("1982-06-01"), 1234);
-        Lecturer l7 = new Lecturer("Adrian", "Clear", 43, DateTime.parse("1979-03-04"), 1234);
-
-        //adding the lecturers to their ArrayList
-        ArrayList<Lecturer> lecturers = new ArrayList<Lecturer>(List.of(l1, l2, l3, l4, l5, l6, l7));*/
 
         //Adding courses to students
         s1.setCourse(new ArrayList<CourseProgramme>(List.of(c1)));
@@ -94,8 +78,6 @@ public class TestClass
         c1.setModule(new ArrayList<Module>(List.of(m1, m2, m4, m5)));
         c2.setModule(new ArrayList<Module>(List.of(m3, m7)));
         c3.setModule(new ArrayList<Module>(List.of(m1, m2, m6)));
-
-        //l1.setLecturer(new ArrayList<Lecturer>(List.of(s1, s2)));
 
         System.out.println("\nStudent Data");
         for (Student s : students)
@@ -143,7 +125,6 @@ public class TestClass
             for (Module m : c.getModule())
             {
                 System.out.println("\t"+ m.getModuleID() +" - "+ m.getModuleName());
-                //System.out.println("\tModule name: " + m.getModuleID());
             }
             System.out.println("Students in "+ c.getCourseName());
             for (Student s : c.getStudent())
